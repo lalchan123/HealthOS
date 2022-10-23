@@ -5,7 +5,10 @@
 git clone https://github.com/lalchan123/HealthOS.git
 ```
 
-### virtualenv create 
+### if virtuelenv is not exists, virtualenv create 
+```
+python -m venv env
+```
 ### virtual env activated command for gitbash
 ```
 source env/Scripts/activate
