@@ -5,9 +5,8 @@
 git clone https://github.com/lalchan123/HealthOS.git
 ```
 
-### extract here the github project
-### open the project main folder
-### virtual env activate for gitbash
+### virtualenv create 
+### virtual env activated command for gitbash
 ```
 source env/Scripts/activate
 ```
