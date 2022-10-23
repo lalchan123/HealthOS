@@ -18,6 +18,8 @@ from sslcommerz_lib import SSLCOMMERZ
 
 # Create your views here.
 
+
+## for customer registration view start
 @api_view(['POST'])
 def CustomerRegistration(request):
     try:
@@ -41,7 +43,7 @@ def CustomerRegistration(request):
     except:
         return Response({'status':status.HTTP_400_BAD_REQUEST, 'message':'Something is wrong'}, status=status.HTTP_400_BAD_REQUEST)    
 
-
+## mobile validation number for bangladesh start
 import re
 def validateMobile(mobile):
     pattern = re.compile('(^([+]{1}[8]{2}|0088)?(01){1}[3-9]{1}\d{8})$') 
@@ -49,8 +51,11 @@ def validateMobile(mobile):
         return True
     else:
         return False
+## mobile validation number for bangladesh end    
+
+## for customer registration view end    
     
-      
+## plans activation and payment view start      
 @api_view(['POST'])
 def CustomerSubcriptionPay(request):
     try:
@@ -77,6 +82,7 @@ def CustomerSubcriptionPay(request):
        
     
         if plan_activate_dial.plan_active==True:
+            ## ssl commerce 
             sslcz = SSLCOMMERZ({ 'store_id': 'lalco6354730f6ac56', 'store_pass': 'lalco6354730f6ac56@ssl', 'issandbox': True })
             data = {
                     'total_amount': plan_activate_dial.per_month_pay_bd_taka,
@@ -115,8 +121,9 @@ def CustomerSubcriptionPay(request):
     except:
         return Response({'status':status.HTTP_400_BAD_REQUEST, 'message':'Something is wrong'}, status=status.HTTP_400_BAD_REQUEST)
     
-    
-    
+## plans activation and payment view end
+   
+## Service Activation validation check view start    
 @api_view(['GET'])   
 def Service_Provide_Validate_Check(request, phone_number):
     try:
@@ -136,3 +143,4 @@ def Service_Provide_Validate_Check(request, phone_number):
     except:
         return Response({'status':status.HTTP_400_BAD_REQUEST, 'message':'Something is wrong'}, status=status.HTTP_400_BAD_REQUEST)
             
+## Service Activation validation check view end            

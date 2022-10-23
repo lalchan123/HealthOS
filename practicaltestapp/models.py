@@ -4,6 +4,7 @@ from django.db import models
 
 # Create your models here.
 
+## for plan model start
 class PlansModel(models.Model):
     plan_name = models.CharField(max_length=250)
     per_month_pay_bd_taka = models.IntegerField()
@@ -14,6 +15,10 @@ class PlansModel(models.Model):
     def __str__(self):
         return self.plan_name
     
+## for plan model end
+
+    
+## for registration customer start    
 COLOR_CHOICES = (
     ('GP','GP'),
     ('Robi', 'Robi'),
@@ -31,8 +36,9 @@ class Customer(models.Model):
     def __str__(self):
         return self.phone_number
     
+## for registration customer end     
     
-    
+## for payment and activation plans start    
 class PlanCustomerBuyPay(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     plans_offer = models.ForeignKey(PlansModel, on_delete=models.CASCADE)
@@ -44,3 +50,4 @@ class PlanCustomerBuyPay(models.Model):
     def __str__(self):
         return f'{self.customer.first_name} {self.customer.phone_number} {self.plans_offer.plan_name}'
     
+## for payment and activation plans end    
