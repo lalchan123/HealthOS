@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "872ef2db-6f2f-46c7-a026-106cfd3fb4cf",
+		"name": "HealthOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer-register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Lalchan",
+							"type": "default"
+						},
+						{
+							"key": "last_name",
+							"value": "Badsa",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "01306817790",
+							"type": "default"
+						},
+						{
+							"key": "nid",
+							"value": "1028306387",
+							"type": "default"
+						},
+						{
+							"key": "company_operator",
+							"value": "GP",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer-register/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer-register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "customer-subscription-pay",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "dial_number",
+							"value": "*121*6234#",
+							"type": "default"
+						},
+						{
+							"key": "phone_number",
+							"value": "01306817790",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/customer-subscription-pay/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"customer-subscription-pay",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "service-provide-validate-check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/service-provide-validate-check/01306817790/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"service-provide-validate-check",
+						"01306817790",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
