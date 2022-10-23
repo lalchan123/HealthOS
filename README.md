@@ -2,7 +2,7 @@
 
 ### github download link
 ```
-
+git clone https://github.com/lalchan123/HealthOS.git
 ```
 
 ### extract here the github project
@@ -28,3 +28,4 @@ python manage.py createsuperuser
 ```
 python manage.py runserver
 ```
+### Please open the 'HealthOS.postman_collection.json' file with postman for api test
